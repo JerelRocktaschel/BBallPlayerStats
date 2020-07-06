@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteModel" representedClassName=".FavoriteModel" syncable="YES">
+        <attribute name="id" attributeType="String"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerModel" inverseName="favorite" inverseEntity="PlayerModel"/>
+    </entity>
+    <entity name="PlayerModel" representedClassName=".PlayerModel" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="dateOfBirth" optional="YES" attributeType="String"/>
+        <attribute name="feet" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="inches" optional="YES" attributeType="String"/>
+        <attribute name="jersey" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="pounds" optional="YES" attributeType="String"/>
+        <attribute name="teamID" optional="YES" attributeType="String"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="FavoriteModel" inverseName="player" inverseEntity="FavoriteModel"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamModel" inverseName="player" inverseEntity="TeamModel"/>
+    </entity>
+    <entity name="TeamModel" representedClassName=".TeamModel" syncable="YES">
+        <attribute name="abbreviation" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="player" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerModel" inverseName="team" inverseEntity="PlayerModel"/>
+    </entity>
+    <elements>
+        <element name="FavoriteModel" positionX="130.2890625" positionY="-134.75" width="128" height="73"/>
+        <element name="PlayerModel" positionX="-170.8671875" positionY="-164.25390625" width="128" height="238"/>
+        <element name="TeamModel" positionX="126.26171875" positionY="-13.8984375" width="128" height="118"/>
+    </elements>
+</model>
