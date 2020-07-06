@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D8298CB124B2418B009374F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CB024B2418B009374F9 /* AppDelegate.swift */; };
 		D8298CBA24B2418E009374F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8298CB924B2418E009374F9 /* Assets.xcassets */; };
-		D8298CC824B2418E009374F9 /* BBallPlayerStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CC724B2418E009374F9 /* BBallPlayerStatsTests.swift */; };
-		D8298CD324B2418E009374F9 /* BBallPlayerStatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CD224B2418E009374F9 /* BBallPlayerStatsUITests.swift */; };
 		D8298CEB24B243F5009374F9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CEA24B243F5009374F9 /* ErrorHandler.swift */; };
 		D8298CED24B24411009374F9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CEC24B24411009374F9 /* String.swift */; };
 		D8298CEF24B2442D009374F9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CEE24B2442D009374F9 /* UIViewController.swift */; };
@@ -85,11 +83,7 @@
 		D8298CB924B2418E009374F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8298CBE24B2418E009374F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8298CC324B2418E009374F9 /* BBallPlayerStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBallPlayerStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8298CC724B2418E009374F9 /* BBallPlayerStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBallPlayerStatsTests.swift; sourceTree = "<group>"; };
-		D8298CC924B2418E009374F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8298CCE24B2418E009374F9 /* BBallPlayerStatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBallPlayerStatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8298CD224B2418E009374F9 /* BBallPlayerStatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBallPlayerStatsUITests.swift; sourceTree = "<group>"; };
-		D8298CD424B2418E009374F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8298CEA24B243F5009374F9 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		D8298CEC24B24411009374F9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D8298CEE24B2442D009374F9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -175,8 +169,6 @@
 				D8298D3324B2B6E2009374F9 /* Navigation Controllers */,
 				D8298D3624B2B73C009374F9 /* Network Layer */,
 				D8298D4D24B2BAF1009374F9 /* Storage Layer */,
-				D8298CC624B2418E009374F9 /* BBallPlayerStatsTests */,
-				D8298CD124B2418E009374F9 /* BBallPlayerStatsUITests */,
 				D8298CAE24B2418B009374F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,24 +181,6 @@
 				D8298CCE24B2418E009374F9 /* BBallPlayerStatsUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D8298CC624B2418E009374F9 /* BBallPlayerStatsTests */ = {
-			isa = PBXGroup;
-			children = (
-				D8298CC724B2418E009374F9 /* BBallPlayerStatsTests.swift */,
-				D8298CC924B2418E009374F9 /* Info.plist */,
-			);
-			path = BBallPlayerStatsTests;
-			sourceTree = "<group>";
-		};
-		D8298CD124B2418E009374F9 /* BBallPlayerStatsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D8298CD224B2418E009374F9 /* BBallPlayerStatsUITests.swift */,
-				D8298CD424B2418E009374F9 /* Info.plist */,
-			);
-			path = BBallPlayerStatsUITests;
 			sourceTree = "<group>";
 		};
 		D8298CE024B2434D009374F9 /* Application Resources */ = {
@@ -713,7 +687,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8298CC824B2418E009374F9 /* BBallPlayerStatsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +694,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8298CD324B2418E009374F9 /* BBallPlayerStatsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
