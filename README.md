@@ -12,6 +12,6 @@ Each player stats detail view presents a pic of the player, jersey and position,
 
 The BBall Players Stats App collects no personal information at all. Zip. Nada.
  
-![Image of Yaktocat](https://images.squarespace-cdn.com/content/v1/5e2ca76d3df0a85f43d5341b/1594153189110-0IJK0ZP9EUWFDET7XK6Z/ke17ZwdGBToddI8pDm48kBzliEdUkZoo-GCV5MaMrT5Zw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7ewC-od9ZuPSBWOQvaZcUlZsJEfpCP4RRr54mwOlrTHeN0leClhMd3nij6dxBnoI7A/250_Players.png)
+[![Available on the App Store](http://cl.ly/WouG/Download_on_the_App_Store_Badge_US-UK_135x40.svg)](https://itunes.apple.com)
 
 
