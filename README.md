@@ -24,3 +24,16 @@ So this app started as one thing in my mind and went through several iterations 
 
 ![Image of Stefon](https://media3.giphy.com/media/XaFX9e9xfbcXWxW0a2/giphy.gif)
 
+* 100% Swift
+* MVVM+C mostly - a little MVP as well
+* Simple network layer with router
+* NBA API calls for player and team data and a call to ESPN for NBA logos
+* Core Data storage layer with data models using Decodable for JSON processing
+* FetchedResultsViewController
+* ResultSearchController
+* Image Caching
+* Auto Layout in Xib and code
+* Centralized error handling
+* Object Association
+* Resources enum defines all resources utilized throughout app for parameterization
+* Zero dependencies
