@@ -8,10 +8,19 @@ iPhone app that retrieves all current players from the NBA, sorts players alphab
 
 Each player stats detail view presents a pic of the player, jersey and position, demographics and season statistics. Select the favorite button to tag your favorite players and selecting the star button on the players list will show only your favorite players.
 
+I built this app for a few reasons. I love the NBA and have been a fan for over three decades. I wanted to increase my Swift knowledge and I learn quicker when I am working on a real project as opposed to book learning. 
+
+I do have a few addiotnal feature ideas for this app and may end up implementing those in a subsequent release.
+
 ## Privacy Policy
 
 The BBall Players Stats App collects no personal information at all. Zip. Nada.
  
 [![Available on the App Store](http://cl.ly/WouG/Download_on_the_App_Store_Badge_US-UK_135x40.svg)](https://itunes.apple.com)
 
+## What is under the hood
+
+So this app started as one thing in my mind and went through several iterations to get here, which has led to implementing a number of features:
+
+![Image of Stefon](https://media3.giphy.com/media/XaFX9e9xfbcXWxW0a2/giphy.gif)
 
