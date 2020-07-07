@@ -10,8 +10,8 @@ Each player stats detail view presents a pic of the player, jersey and position,
 
 ## Privacy Policy
 
-The BBall Players Stats App collects no personal information at all.
-
+The BBall Players Stats App collects no personal information at all. Zip. Nada.
+ 
 
 
 
