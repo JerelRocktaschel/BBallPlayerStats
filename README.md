@@ -26,11 +26,12 @@ So this app started as one thing in my mind and went through several iterations 
 
 * 100% Swift
 * MVVM+C mostly - a little MVP as well
-* Simple network layer with router
+* Simple network layer using Decodable for JSON processing
 * NBA API calls for player and team data and a call to ESPN for NBA logos
-* Core Data storage layer with data models using Decodable for JSON processing
-* FetchedResultsViewController
-* ResultSearchController
+* Core Data storage layer 
+* NSFetchedResultsController
+* UIResultSearchController
+* NSAttributedString
 * Image Caching
 * Dispatch Queues for handling simultaneous API calls
 * Auto Layout in Xib and code
