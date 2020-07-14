@@ -40,4 +40,4 @@ So this app started as one thing in my mind and went through several iterations 
 * Resources enum defines all resources utilized throughout app for parameterization
 * Zero dependencies
 
-https://drive.google.com/file/d/1LxOVyqFL-_SQbmzsEwxYrQM2ljs6DkxT/view?usp=sharing
+https://doc-0c-2g-docs.googleusercontent.com/docs/securesc/ggl33j54k89kplfdnh3o8mpoh77phiho/u00snvij369qntqpb009up8k9fhb8jtq/1594697400000/08029406649719531562/08029406649719531562/1LxOVyqFL-_SQbmzsEwxYrQM2ljs6DkxT?e=view&authuser=0&nonce=a5ajcuiba87f8&user=08029406649719531562&hash=454pjt5dpnmbqimg01lntfdh4lqp20lg
