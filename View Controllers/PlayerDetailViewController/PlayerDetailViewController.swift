@@ -70,13 +70,11 @@ final class PlayerDetailViewController: UIViewController {
     private func initPlayerDetailViewModel() {
         self.startIndicatingActivity()
         self.playerDetailViewModel.setPlayerDetails = { [unowned self] () in
-            DispatchQueue.main.async {
-                self.playerTeamImageStackView.playerDetailViewModel = self.playerDetailViewModel
-                self.playerTeamImageStackView.setPlayerImage()
-                self.playerSeasonStatisticsView.playerDetailViewModel = self.playerDetailViewModel
-                self.playerSeasonStatisticsView.setStatValues()
-                self.stopIndicatingActivity()
-            }
+            self.playerTeamImageStackView.playerDetailViewModel = self.playerDetailViewModel
+            self.playerTeamImageStackView.setPlayerImage()
+            self.playerSeasonStatisticsView.playerDetailViewModel = self.playerDetailViewModel
+            self.playerSeasonStatisticsView.setStatValues()
+            self.stopIndicatingActivity()
         }
         self.playerDetailViewModel.getData()
     }
