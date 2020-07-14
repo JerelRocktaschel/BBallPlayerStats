@@ -40,4 +40,4 @@ So this app started as one thing in my mind and went through several iterations 
 * Resources enum defines all resources utilized throughout app for parameterization
 * Zero dependencies
 
-![Image of Stefon](https://drive.google.com/uc?export=view&id=1LxOVyqFL-_SQbmzsEwxYrQM2ljs6DkxT)
+![Image of Stefon](https://images.squarespace-cdn.com/content/v1/5e2ca76d3df0a85f43d5341b/1594738829649-5N2EATCEOTJSLHWBCL2X/ke17ZwdGBToddI8pDm48kLnfZvQ9iwxKU6eubAUQjId7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UZu4EA4VkQXskbAiP4Lo2GV8HD7TW41NQmswmX4LjmCLoRwB-dUGsSquCnVTFQcaRg/BBallPlayerStats_Resized.png)
