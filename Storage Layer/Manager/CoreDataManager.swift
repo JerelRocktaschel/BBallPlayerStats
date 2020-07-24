@@ -33,7 +33,7 @@ final class CoreDataManager {
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel:   managedObjectModel)
+        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         let fileManager = FileManager.default
         let documentsDirectoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(Resources.string.coreData.storeName)
@@ -137,6 +137,7 @@ final class CoreDataManager {
             playerModel.dateOfBirth = player.dateOfBirth
             
             ///some players have multiple positions - display main position
+            //TODO this code should be in player model String(player.position.prefix(1))
             playerModel.position = String(player.position.prefix(1))
             if let team = teams?.first(where:{$0.id == player.teamID}) {
                 playerModel.team = team

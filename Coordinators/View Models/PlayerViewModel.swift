@@ -113,10 +113,21 @@ struct PlayerListViewModel {
     
     typealias GetPlayerListViewModelCompletion = (_ playerViewModels: [PlayerViewModel]?, _ error: LocalizedError?)->()
     
+    //MARK: Internal Properties
+    
+    let networkService: PlayersNetworkService
+    
+    //MARK: Init
+    
+    init(networkService: PlayersNetworkService) {
+        self.networkService = networkService
+    }
+    
     //MARK: Public functions
     
     func getData(completion: @escaping GetPlayerListViewModelCompletion) {
-        NetworkManager.shared.getPlayers{ players, error in
+      //  NetworkManager.shared.getPlayers{ players, error in
+        networkService.getPlayers{ players, error in
             guard error == nil else {
                 completion(nil, error)
                 return

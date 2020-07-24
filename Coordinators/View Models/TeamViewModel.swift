@@ -29,10 +29,20 @@ class TeamListViewModel: NSObject {
     
     typealias GetTeamsListViewModelCompletion = (_ teamViewModels: [TeamViewModel]?, _ error: LocalizedError?)->()
     
+    //MARK: Internal Properties
+    
+    let networkService: TeamsNetworkService
+    
+    //MARK: Init
+    
+    init(networkService: TeamsNetworkService) {
+        self.networkService = networkService
+    }
+    
     //MARK: Public functions
     
     func getData(completion: @escaping GetTeamsListViewModelCompletion) {
-        NetworkManager.shared.getTeams{ teams, error in
+        networkService.getTeams{ teams, error in
             guard error == nil else {
                 completion(nil, error)
                 return

@@ -18,7 +18,7 @@ extension TeamImagePresentable {
     func getTeamLogoImage(from teamModel: TeamModel) -> UIImage? {
         var teamImage = UIImage()
         if let abbreviationNS = teamModel.abbreviation {
-            if let image = NetworkManager.imageCache.object(forKey: abbreviationNS as NSString) {
+            if let image = TeamImageCache.imageCache.object(forKey: abbreviationNS as NSString) {
                 teamImage = image
             }
         } else {

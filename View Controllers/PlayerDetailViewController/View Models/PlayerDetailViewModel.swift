@@ -74,7 +74,7 @@ final class PlayerDetailViewModel {
         self.height.append(NSMutableAttributedString(string: Resources.string.playerDetailLabels.feet, attributes:self.playerDetailLabelStringAttributes))
         self.height.append(NSMutableAttributedString(string: inches, attributes:playerDetailStringAttributes))
         self.height.append(NSMutableAttributedString(string: Resources.string.playerDetailLabels.inches, attributes:self.playerDetailLabelStringAttributes))
-        teamLogoImage = (NetworkManager.imageCache.object(forKey: self.abbreviation as NSString) ?? Resources.image.tabBar.basketball)
+        teamLogoImage = (TeamImageCache.imageCache.object(forKey: self.abbreviation as NSString) ?? Resources.image.tabBar.basketball)
     }
     
     //MARK: Public functions
@@ -82,11 +82,16 @@ final class PlayerDetailViewModel {
     func getData() {
         dispatchGroup.enter()
         dispatchGroup.enter()
-        playerSeasonDataViewModel = PlayerSeasonDataViewModel(with: self.id)
+        let networkSeasonDataService = PlayerSeasonDataService()
+        playerSeasonDataViewModel = PlayerSeasonDataViewModel(with: id,
+                                                              networkService: networkSeasonDataService)
         initPlayerSeasonDataViewModel()
+        let networkImageService = PlayerImageService()
         
         if let playerID = playerModel.id, let teamID = playerModel.team?.id {
-            playerImageViewModel = PlayerImageViewModel(with: playerID, and: teamID)
+            playerImageViewModel = PlayerImageViewModel(with: playerID,
+                                                        and: teamID,
+                                                        networkService: networkImageService)
             initPlayerImageViewModel()
         }
         

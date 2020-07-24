@@ -16,17 +16,19 @@ class PlayerSeasonDataViewModel: NSObject {
     var seasonYear = Int()
     var setPlayerValues: (()->())?
     private let playerID: String
+    private let networkService: PlayerSeasonDataService
     
     //MARK: Init
     
-    init(with playerID: String) {
+    init(with playerID: String, networkService: PlayerSeasonDataService) {
         self.playerID = playerID
+        self.networkService = networkService
     }
     
     //MARK: Public functions
     
     func getData() {
-        NetworkManager.shared.getPlayerSeasonData (playerID: playerID) { [unowned self] playerData, error in
+        networkService.getPlayerSeasonData (playerID: playerID) { [unowned self] playerData, error in
             guard error == nil,
                 let playerData = playerData else {
                     self.ppg = Resources.string.seasonNotAvailable.na

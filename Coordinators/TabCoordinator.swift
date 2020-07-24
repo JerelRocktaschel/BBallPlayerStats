@@ -87,7 +87,8 @@ final class TabCoordinator: NSObject {
     //MARK: Private Functions
     
     private func initPlayerViewModels(){
-        let playerListViewModel = PlayerListViewModel()
+        let playersService = PlayersService()
+        let playerListViewModel = PlayerListViewModel(networkService: playersService)
         playerListViewModel.getData() { [unowned self] playerViewModels, error in
             if let error = error {
                 self.storedError = error
@@ -99,7 +100,8 @@ final class TabCoordinator: NSObject {
     }
     
     private func initTeamViewModels() {
-        let teamListViewModel = TeamListViewModel()
+        let teamsService = TeamsService()
+        let teamListViewModel = TeamListViewModel(networkService: teamsService)
         teamListViewModel.getData() { [unowned self] teamViewModels, error in
             if let error = error {
                 self.storedError = error
@@ -112,12 +114,13 @@ final class TabCoordinator: NSObject {
     }
 
     private func initTeamImageViewModels() {
-        let imageCacheGroup: DispatchGroup = DispatchGroup()
+        let imageCacheGroup = DispatchGroup()
+        let networkService = TeamImageService()
         for teamViewModel in self.teamViewModels {
             imageCacheGroup.enter()
-            let teamViewImageModel = TeamImageViewModel(with: teamViewModel.abbreviation)
+            let teamViewImageModel = TeamImageViewModel(with: teamViewModel.abbreviation, and: networkService)
             teamViewImageModel.getData() { teamViewImageModel in
-                NetworkManager.imageCache.setObject(teamViewImageModel.teamImage, forKey: teamViewImageModel.abbreviation as NSString)
+                TeamImageCache.imageCache.setObject(teamViewImageModel.teamImage, forKey: teamViewImageModel.abbreviation as NSString)
                 imageCacheGroup.leave()
             }
         }

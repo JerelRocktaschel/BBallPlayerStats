@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82677A424C78949009ABFDA /* PlayersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677A324C78949009ABFDA /* PlayersService.swift */; };
+		D82677A624CB234C009ABFDA /* PlayerSeasonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677A524CB234C009ABFDA /* PlayerSeasonDataService.swift */; };
+		D82677A824CB2409009ABFDA /* PlayerImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677A724CB2409009ABFDA /* PlayerImageService.swift */; };
+		D82677AA24CB24B6009ABFDA /* TeamImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677A924CB24B6009ABFDA /* TeamImageService.swift */; };
+		D82677AC24CB2544009ABFDA /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677AB24CB2544009ABFDA /* TeamsService.swift */; };
+		D82677AE24CB261A009ABFDA /* NetworkResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677AD24CB261A009ABFDA /* NetworkResponseHandler.swift */; };
+		D82677B424CB274F009ABFDA /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82677B324CB274F009ABFDA /* NetworkManagerError.swift */; };
 		D8298CB124B2418B009374F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CB024B2418B009374F9 /* AppDelegate.swift */; };
 		D8298CBA24B2418E009374F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8298CB924B2418E009374F9 /* Assets.xcassets */; };
 		D8298CEB24B243F5009374F9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298CEA24B243F5009374F9 /* ErrorHandler.swift */; };
@@ -40,7 +47,6 @@
 		D8298D3224B2B6BE009374F9 /* PlayerSeasonDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D3124B2B6BE009374F9 /* PlayerSeasonDataViewModel.swift */; };
 		D8298D3524B2B708009374F9 /* PlayersNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D3424B2B708009374F9 /* PlayersNavigationController.swift */; };
 		D8298D3C24B2B778009374F9 /* PlayersEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D3B24B2B778009374F9 /* PlayersEndPoint.swift */; };
-		D8298D3E24B2B792009374F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D3D24B2B792009374F9 /* NetworkManager.swift */; };
 		D8298D4024B2B7F3009374F9 /* TeamImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D3F24B2B7F3009374F9 /* TeamImage.swift */; };
 		D8298D4224B2B801009374F9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D4124B2B801009374F9 /* Player.swift */; };
 		D8298D4424B2B815009374F9 /* PlayerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8298D4324B2B815009374F9 /* PlayerImage.swift */; };
@@ -78,6 +84,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D82677A324C78949009ABFDA /* PlayersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersService.swift; sourceTree = "<group>"; };
+		D82677A524CB234C009ABFDA /* PlayerSeasonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSeasonDataService.swift; sourceTree = "<group>"; };
+		D82677A724CB2409009ABFDA /* PlayerImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageService.swift; sourceTree = "<group>"; };
+		D82677A924CB24B6009ABFDA /* TeamImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImageService.swift; sourceTree = "<group>"; };
+		D82677AB24CB2544009ABFDA /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
+		D82677AD24CB261A009ABFDA /* NetworkResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandler.swift; sourceTree = "<group>"; };
+		D82677B324CB274F009ABFDA /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
 		D8298CAD24B2418B009374F9 /* BBall Players.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBall Players.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8298CB024B2418B009374F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8298CB924B2418E009374F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +128,6 @@
 		D8298D3124B2B6BE009374F9 /* PlayerSeasonDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSeasonDataViewModel.swift; sourceTree = "<group>"; };
 		D8298D3424B2B708009374F9 /* PlayersNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersNavigationController.swift; sourceTree = "<group>"; };
 		D8298D3B24B2B778009374F9 /* PlayersEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersEndPoint.swift; sourceTree = "<group>"; };
-		D8298D3D24B2B792009374F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D8298D3F24B2B7F3009374F9 /* TeamImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamImage.swift; sourceTree = "<group>"; };
 		D8298D4124B2B801009374F9 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D8298D4324B2B815009374F9 /* PlayerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImage.swift; sourceTree = "<group>"; };
@@ -160,6 +172,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82677AF24CB26CB009ABFDA /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				D82677A324C78949009ABFDA /* PlayersService.swift */,
+				D82677AB24CB2544009ABFDA /* TeamsService.swift */,
+				D82677A924CB24B6009ABFDA /* TeamImageService.swift */,
+				D82677A524CB234C009ABFDA /* PlayerSeasonDataService.swift */,
+				D82677A724CB2409009ABFDA /* PlayerImageService.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		D82677B024CB26D3009ABFDA /* Response Handler */ = {
+			isa = PBXGroup;
+			children = (
+				D82677AD24CB261A009ABFDA /* NetworkResponseHandler.swift */,
+			);
+			path = "Response Handler";
+			sourceTree = "<group>";
+		};
+		D82677B124CB2733009ABFDA /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D82677B324CB274F009ABFDA /* NetworkManagerError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		D8298CA424B2418B009374F9 = {
 			isa = PBXGroup;
 			children = (
@@ -420,10 +460,12 @@
 		D8298D3624B2B73C009374F9 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				D82677AF24CB26CB009ABFDA /* Network Services */,
 				D8298D3A24B2B761009374F9 /* End Point */,
-				D8298D3924B2B75A009374F9 /* Manager */,
+				D82677B024CB26D3009ABFDA /* Response Handler */,
 				D8298D3824B2B755009374F9 /* Models */,
 				D8298D3724B2B750009374F9 /* Service */,
+				D82677B124CB2733009ABFDA /* Errors */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -447,14 +489,6 @@
 				D8298D3F24B2B7F3009374F9 /* TeamImage.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		D8298D3924B2B75A009374F9 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				D8298D3D24B2B792009374F9 /* NetworkManager.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		D8298D3A24B2B761009374F9 /* End Point */ = {
@@ -633,9 +667,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82677A424C78949009ABFDA /* PlayersService.swift in Sources */,
+				D82677B424CB274F009ABFDA /* NetworkManagerError.swift in Sources */,
 				D8298D4824B2BA7E009374F9 /* Team.swift in Sources */,
 				D8298CED24B24411009374F9 /* String.swift in Sources */,
 				D8298D5324B2BD12009374F9 /* Player.xcdatamodeld in Sources */,
+				D82677AC24CB2544009ABFDA /* TeamsService.swift in Sources */,
 				D8298CB124B2418B009374F9 /* AppDelegate.swift in Sources */,
 				D8298D4A24B2BABB009374F9 /* EndPointType.swift in Sources */,
 				D8298D5D24B2C34B009374F9 /* PlayerTeamImageStackView.swift in Sources */,
@@ -656,11 +693,12 @@
 				D8298D2324B2B5D5009374F9 /* TeamTableViewCell.swift in Sources */,
 				D8298CF724B2447D009374F9 /* UIActivityIndicatorView.swift in Sources */,
 				D8298D1324B2B4D1009374F9 /* PlayersTableViewCoordinator.swift in Sources */,
+				D82677A824CB2409009ABFDA /* PlayerImageService.swift in Sources */,
 				D8298CF324B2445F009374F9 /* UINavigationController.swift in Sources */,
+				D82677AE24CB261A009ABFDA /* NetworkResponseHandler.swift in Sources */,
 				D8298D0524B2B317009374F9 /* TeamImageViewModel.swift in Sources */,
 				D8298D5B24B2BD71009374F9 /* CoreDataManager.swift in Sources */,
 				D8298CEF24B2442D009374F9 /* UIViewController.swift in Sources */,
-				D8298D3E24B2B792009374F9 /* NetworkManager.swift in Sources */,
 				D8298D2E24B2B68A009374F9 /* PlayerDetailViewModel.swift in Sources */,
 				D8298D4024B2B7F3009374F9 /* TeamImage.swift in Sources */,
 				D8298CF924B25F20009374F9 /* ObjectAssociation.swift in Sources */,
@@ -673,11 +711,13 @@
 				D8298D5524B2BD28009374F9 /* FavoriteModel.swift in Sources */,
 				D8298CF524B2446A009374F9 /* UIImage.swift in Sources */,
 				D8298D3024B2B6A7009374F9 /* PlayerImageViewModel.swift in Sources */,
+				D82677AA24CB24B6009ABFDA /* TeamImageService.swift in Sources */,
 				D8298D2624B2B608009374F9 /* TeamTableViewCellModel.swift in Sources */,
 				D8298D0024B2B2A3009374F9 /* TabCoordinator.swift in Sources */,
 				D8298D6324B2C395009374F9 /* PlayerSeasonStatisticsView.swift in Sources */,
 				D8298D4624B2B82D009374F9 /* PlayerSeasonData.swift in Sources */,
 				D8298D2824B2B62B009374F9 /* TeamPlayersTableViewController.swift in Sources */,
+				D82677A624CB234C009ABFDA /* PlayerSeasonDataService.swift in Sources */,
 				D8298CFE24B2B292009374F9 /* ApplicationCoordinator.swift in Sources */,
 				D8298D2024B2B5B5009374F9 /* TeamsTableViewCoordinator.swift in Sources */,
 			);

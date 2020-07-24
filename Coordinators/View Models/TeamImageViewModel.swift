@@ -12,12 +12,13 @@ class TeamImageViewModel {
     
     //MARK: Internal Properties
     
+    let networkService: TeamImageNetworkService
     lazy var teamImage: UIImage = UIImage()
     let abbreviation: String
     
     //MARK: Init
     
-    init(with abbreviation: String) {
+    init(with abbreviation: String, and networkService: TeamImageNetworkService) {
         ///differences between NBA and ESPN for team abbreviations
         let convertedAbbreviation: String
         switch abbreviation {
@@ -29,12 +30,14 @@ class TeamImageViewModel {
             convertedAbbreviation = abbreviation
         }
         self.abbreviation = convertedAbbreviation
+        self.networkService = networkService
     }
     
     //MARK: Public functions
     
     func getData(completion: @escaping GetTeamImageViewModelCompletion) {
-        NetworkManager.shared.getTeamImage(team: abbreviation) { teamImage in
+        networkService.getTeamImage(team: abbreviation) { teamImage in
+        //NetworkManager.shared.getTeamImage(team: abbreviation) { teamImage in
             self.teamImage = teamImage.image
             completion(self)
         }
