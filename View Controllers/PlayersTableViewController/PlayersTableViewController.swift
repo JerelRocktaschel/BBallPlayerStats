@@ -10,6 +10,7 @@ final class PlayersTableViewController: UITableViewController {
     //MARK: Properties
     
     weak var coordinator: PlayersTableViewCoordinator?
+    private let playersDataInterface : PlayersDataInterface
     private let defaultTableSeparatorColor = Resources.color.PlayerTableViewCell.defaultColor
     private var hideTableIndex: Bool = false
     private let teamLogoWithDataCellName = String.init(describing: PlayerTableViewCell.self)
@@ -29,20 +30,14 @@ final class PlayersTableViewController: UITableViewController {
     }()
     
     lazy var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> = {
-             let sortDescriptors = [NSSortDescriptor(key: Resources.string.sortDescriptors.players.lastName, ascending: true),
-             NSSortDescriptor(key: Resources.string.sortDescriptors.players.firstName, ascending: true)]
-             let fetchRequest = CoreDataManager.shared.buildFetchRequest(
-                 with: nil,
-                 sortDescriptors: sortDescriptors,
-                 fetchLimit: nil,
-                 entity: Resources.string.entityName.PlayerModel)
-             let managedObjectContext = CoreDataManager.shared.managedObjectContext
-             let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                          managedObjectContext: managedObjectContext,
-                                          sectionNameKeyPath: Resources.string.frc.players.keyPath,
-                                                     cacheName: Resources.string.frc.players.cacheName)
+        let fetchRequest = playersDataInterface.buildPlayersFetchRequest()
+        let managedObjectContext = CoreDataManager.shared.managedObjectContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: managedObjectContext,
+                                             sectionNameKeyPath: Resources.string.frc.players.keyPath,
+                                             cacheName: Resources.string.frc.players.cacheName)
         frc.delegate = self
-             return frc
+        return frc
     }()
     
     private lazy var favoriteButton: UIButton = { [unowned self] in
@@ -67,8 +62,9 @@ final class PlayersTableViewController: UITableViewController {
     
     //MARK: Init
     
-    init(with playersCoordinator: PlayersTableViewCoordinator) {
+    init(with playersCoordinator: PlayersTableViewCoordinator, playersDataInterface: PlayersDataInterface) {
         self.coordinator = playersCoordinator
+        self.playersDataInterface = playersDataInterface
         super.init(nibName: nil, bundle: nil)
     }
     

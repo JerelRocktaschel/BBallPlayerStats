@@ -27,7 +27,8 @@ final class PlayersTableViewCoordinator: NSObject {
 
 extension PlayersTableViewCoordinator: Coordinator {
     func start() {
-        playersTableViewController = PlayersTableViewController(with: self)
+        let playersDataInterface = PlayersDataService()
+        playersTableViewController = PlayersTableViewController(with: self, playersDataInterface: playersDataInterface)
         playersTableViewController.navigationItem.title = Resources.string.navigationTitle.players
         navigationController.pushViewController(self.playersTableViewController, animated: false)
     }

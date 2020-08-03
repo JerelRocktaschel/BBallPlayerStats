@@ -10,21 +10,11 @@ final class TeamPlayersTableViewController: UITableViewController {
     //MARK: Internal Properties
     
     weak var coordinator: TeamsTableViewCoordinator?
+    private let teamPlayersDataInterface : TeamPlayersDataInterface
     private let playerTableViewCellName = String.init(describing: PlayerTableViewCell.self)
     lazy private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> = {
         let managedObjectContext = CoreDataManager.shared.managedObjectContext
-        let predicate = NSPredicate(format: Resources.string.predicate.teamPlayers.format,
-                                    coordinator?.selectedTeam.id ?? "")
-        let sortDescriptors =  [NSSortDescriptor(key: Resources.string.sortDescriptors.teamPlayers.lastName, ascending: true),
-                                NSSortDescriptor(key: Resources.string.sortDescriptors.teamPlayers.firstName, ascending: true)]
-        
-        let fetchRequest = CoreDataManager.shared.buildFetchRequest(
-            with: predicate,
-            sortDescriptors: sortDescriptors,
-            fetchLimit: nil,
-            entity: Resources.string.entityName.PlayerModel
-        )
-        
+        let fetchRequest = teamPlayersDataInterface.buildTeamPlayersFetchRequest(teamId: coordinator?.selectedTeam.id ?? "")
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: managedObjectContext,
                                              sectionNameKeyPath: nil,
@@ -36,8 +26,9 @@ final class TeamPlayersTableViewController: UITableViewController {
     
     //MARK: Init
     
-    init(with teamsTableViewCoordinator: TeamsTableViewCoordinator) {
+    init(with teamsTableViewCoordinator: TeamsTableViewCoordinator, teamPlayersDataInterface: TeamPlayersDataInterface ) {
         self.coordinator = teamsTableViewCoordinator
+        self.teamPlayersDataInterface = teamPlayersDataInterface
         super.init(nibName: nil, bundle: nil)
         fetchData()
     }

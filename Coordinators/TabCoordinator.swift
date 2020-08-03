@@ -14,6 +14,7 @@ final class TabCoordinator: NSObject {
     lazy private(set) var playerViewModels = [PlayerViewModel]()
     lazy private(set) var teamViewModels = [TeamViewModel]()
     private let disptachGroup: DispatchGroup = DispatchGroup()
+    private var processDataService = ProcessDataService()
     private var storedError: LocalizedError?
     var rootViewController: UIViewController? {
         return tabController
@@ -47,8 +48,8 @@ final class TabCoordinator: NSObject {
             }
 
             do {
-                try CoreDataManager.shared.processData(with: self.playerViewModels,
-                                                           and: self.teamViewModels)
+                try self.processDataService.processData(playerViewModels: self.playerViewModels,
+                                                       teamViewModels: self.teamViewModels)
             } catch {
                 self.displayError(CoreDataError.savePlayersTeamsError)
                 return

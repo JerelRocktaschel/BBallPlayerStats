@@ -42,7 +42,8 @@ final class TeamsTableViewCoordinator: NSObject {
 
 extension TeamsTableViewCoordinator: Coordinator {
     public func start() {
-        teamsTableViewController = TeamsTableViewController(with: self)
+        let teamsDataInterface = TeamsDataService()
+        teamsTableViewController = TeamsTableViewController(with: self, teamsDataInterface: teamsDataInterface)
         navigationController.pushViewController(teamsTableViewController, animated: false)
         teamsTableViewController.navigationItem.title = Resources.string.navigationTitle.teams
     }
@@ -53,7 +54,9 @@ extension TeamsTableViewCoordinator: Coordinator {
 extension TeamsTableViewCoordinator: TeamsTableShowable {
     public func showPlayers(for team: TeamModel) {
         selectedTeam = team
-        let teamPlayersViewController = TeamPlayersTableViewController(with: self)
+        let teamPlayersDataInterface = TeamPlayersDataService()
+        let teamPlayersViewController = TeamPlayersTableViewController(with: self,
+                                                                       teamPlayersDataInterface: teamPlayersDataInterface)
         teamPlayersViewController.navigationItem.title = selectedTeam.name
         
         if let abbreviation = self.selectedTeam.abbreviation {

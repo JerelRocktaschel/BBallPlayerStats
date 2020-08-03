@@ -9,13 +9,15 @@ final class PlayerNameAndFavoriteView: UIView {
     //MARK: Internal Properties
 
     private let playerDetailViewModel: PlayerDetailViewModel
+    private let favoriteDataInterface : FavoriteDataInterface
     private let favoriteButton = UIButton()
     var handle: ((_ error: LocalizedError) -> Void)?
 
     //MARK: Init
     
-    init(with playerDetailViewModel: PlayerDetailViewModel) {
+    init(with playerDetailViewModel: PlayerDetailViewModel, favoriteDataInterface : FavoriteDataInterface) {
         self.playerDetailViewModel = playerDetailViewModel
+        self.favoriteDataInterface = favoriteDataInterface
         super.init(frame: .zero)
         initUI()
     }
@@ -116,7 +118,8 @@ final class PlayerNameAndFavoriteView: UIView {
     @objc
     private func setFavorite() {
         do {
-            try CoreDataManager.shared.saveFavoriteRelationship(for: playerDetailViewModel.playerModel)
+           //try CoreDataManager.shared.saveFavoriteRelationship(for: playerDetailViewModel.playerModel)  favoriteDataInterface
+            try favoriteDataInterface.saveFavoriteRelationship(for: playerDetailViewModel.playerModel)
         } catch {
             handle?(CoreDataError.saveFavoriteError)
             return

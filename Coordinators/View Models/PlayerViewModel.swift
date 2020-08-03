@@ -34,7 +34,8 @@ struct PlayerViewModel {
         lastName = firstAndLastName.lastName
         teamID = player.teamID
         jersey = player.jersey
-        position = player.position
+        ///some players have multiple positions - display main position
+        position = String(player.position.prefix(1))
         feet = player.feet
         inches = player.inches
         pounds = player.pounds

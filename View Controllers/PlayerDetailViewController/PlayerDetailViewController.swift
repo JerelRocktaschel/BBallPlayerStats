@@ -48,7 +48,9 @@ final class PlayerDetailViewController: UIViewController {
         controllerStackView.insertArrangedSubview(playerTeamImageStackView,
                                                at: Resources.int.detailViewController.playerTeamImageIndex)
         
-        playerNameAndFavoriteDetailView = PlayerNameAndFavoriteView(with: self.playerDetailViewModel)
+        let favoriteDataInterface = FavoriteDataService()
+        playerNameAndFavoriteDetailView = PlayerNameAndFavoriteView(with: self.playerDetailViewModel,
+                                                                    favoriteDataInterface: favoriteDataInterface)
         controllerStackView.insertArrangedSubview(playerNameAndFavoriteDetailView,
                                                at: Resources.int.detailViewController.playerNameAndFavoriteDetailIndex)
         playerNameAndFavoriteDetailView.handle = { [unowned self](error) in

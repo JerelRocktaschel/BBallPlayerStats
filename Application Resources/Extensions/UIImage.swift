@@ -9,6 +9,7 @@ extension UIImage : NSDiscardableContent {
     //MARK: Public functions
     
     ///prevents image cache from clearing when app is in background
+    ///all 4 functions required
     public func beginContentAccess() -> Bool {
         return false
     }

@@ -11,28 +11,6 @@ enum Result<T>{
     case failure(LocalizedError)
 }
 
-struct SeasonYearFormatter {
-    
-    //MARK: Helper
-    
-    static func getCurrentSeasonYear() -> String {
-        ///nba uses beginning season year in url
-        ///if current date > new season start date - use current year
-        ///if current date < new season start date - use last year
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = Resources.string.dateFormat.urlDateformat
-        var year = String(Calendar.current.component(.year, from: currentDate))
-        let newSeasonDateString = Resources.string.seasonStart.value + year
-        if let newSeasonDate = dateFormatter.date(from: newSeasonDateString),
-            let yearInt = Int(year),
-            currentDate < newSeasonDate {
-                year = String(yearInt - 1)
-        }
-        return year
-    }
-}
-
 //MARK: Protocol
 
 protocol PlayersNetworkService {
@@ -78,6 +56,28 @@ extension PlayersService: PlayersNetworkService {
                 }
             }
         }
+    }
+}
+
+struct SeasonYearFormatter {
+    
+    //MARK: Helper
+    
+    static func getCurrentSeasonYear() -> String {
+        ///nba uses beginning season year in url
+        ///if current date > new season start date - use current year
+        ///if current date < new season start date - use last year
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Resources.string.dateFormat.urlDateformat
+        var year = String(Calendar.current.component(.year, from: currentDate))
+        let newSeasonDateString = Resources.string.seasonStart.value + year
+        if let newSeasonDate = dateFormatter.date(from: newSeasonDateString),
+            let yearInt = Int(year),
+            currentDate < newSeasonDate {
+                year = String(yearInt - 1)
+        }
+        return year
     }
 }
 

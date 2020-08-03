@@ -10,15 +10,11 @@ final class TeamsTableViewController: UITableViewController {
     //MARK: Properties
     
     weak var coordinator: TeamsTableViewCoordinator?
+    private let teamsDataInterface : TeamsDataInterface
     let teamsTableCellName = String.init(describing: TeamTableViewCell.self)
     lazy var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> = {
+        let fetchRequest = teamsDataInterface.buildTeamsFetchRequest()
         let managedObjectContext = CoreDataManager.shared.managedObjectContext
-        let sortDescriptors = [NSSortDescriptor(key: Resources.string.sortDescriptors.teams.city, ascending: true)]
-        let fetchRequest = CoreDataManager.shared.buildFetchRequest(
-            with: nil,
-            sortDescriptors: sortDescriptors,
-            fetchLimit: nil,
-            entity: Resources.string.entityName.TeamModel)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: managedObjectContext,
                                              sectionNameKeyPath: nil,
@@ -28,8 +24,9 @@ final class TeamsTableViewController: UITableViewController {
     
     //MARK: Init
     
-    init(with teamsCoordinator: TeamsTableViewCoordinator) {
+    init(with teamsCoordinator: TeamsTableViewCoordinator, teamsDataInterface: TeamsDataInterface) {
         self.coordinator = teamsCoordinator
+        self.teamsDataInterface = teamsDataInterface
         super.init(nibName: nil, bundle: nil)
     }
     
