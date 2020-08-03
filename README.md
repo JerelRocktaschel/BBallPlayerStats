@@ -76,7 +76,7 @@ So this app started as one thing in my mind and went through several iterations 
 * I grab team images from ESPN because the NBA uses .svg image files and I didn't want to add a library for image conversion. If this were a real project and I didn't have that flexibility, I certainly would have added a library to my project. I prefer as few dependencies as possible.
 * A refresh of the NBA Player data will truncate the PlayerModel and TeamModel entities. This performs the following:
     - Ensures updated rosters are presented to the user.
-    - Will automatically capture any changes to teams (new cities, moves) should one occur.
+    - Ensures up to date stats are presented to the user.
 * FavoriteModel is not truncated with a refresh. If a player is not active, the player will not show in the app. If the player becomes active again, the player will show and present an accurate favorite status. The NBA ID used for the player does not change.
 * The View Models are responsible for the each of their respective network calls. No network calls exist in the View Controllers.
 * Coordinators are used for navigation within the app. No segue logic exists in the View Controllers.
