@@ -20,10 +20,6 @@ The BBall Players Stats App collects no personal information at all. Zip. Nada.
 
 ## What is under the hood
 
-So this app started as one thing in my mind and went through several iterations to get here, which has led to implementing a number of features:
-
-![This app has everything](https://media3.giphy.com/media/XaFX9e9xfbcXWxW0a2/giphy.gif)
-
 * 100% Swift
 * MVVM+C mostly - a little MVP as well
 * Simple network layer using Decodable for JSON processing
@@ -80,6 +76,5 @@ So this app started as one thing in my mind and went through several iterations 
 * FavoriteModel is not truncated with a refresh. If a player is not active, the player will not show in the app. If the player becomes active again, the player will show and present an accurate favorite status. The NBA ID used for the player does not change.
 * The View Models are responsible for the each of their respective network calls. No network calls exist in the View Controllers.
 * Coordinators are used for navigation within the app. No segue logic exists in the View Controllers.
-* Both the network and storage layers are accessed via abstractions.
-* I am pretty happy with the number of lines in each of the View Controllers. The PlayersTableViewController has the most lines at 270 and the rest come in at 87, 106, and 131. I could make PlayersTableViewController even smaller if I moved out the UISearchController to a separate file. Maybe in a future release.
-* Admittedly, the ObjectAssociation stuff is a bit of dark arts s:hear_no_evil::speak_no_evil:t. Had to read up about it to get a handle on how it works.
+* Both the network and storage layers are accessed via abstractions using the Adapter pattern.
+* I am pretty happy with the number of lines in each of the View Controllers. The PlayersTableViewController has the most lines at 270 and the rest come in at 87, 106, and 131.
